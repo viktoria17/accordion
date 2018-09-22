@@ -63,6 +63,15 @@ const app = new Vue({
       },
       filterItem: function(event) {
         this.type = event.target.value;
+      },
+      now: function () {
+        return Date.now()
+      }
+    },
+    computed: {
+      uniqueItemsTypeList: function () {
+        const mediaTypes = this.mediaList.map(media => media.type);
+        return [...(new Set(mediaTypes))];
       }
     }
   });
