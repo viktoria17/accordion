@@ -61,5 +61,8 @@ const app = new Vue({
       toggleDetails: function(media) {
         media.showDetail = !media.showDetail;
       },
+      filterItem: function(event) {
+        this.type = event.target.value;
+      }
     }
   });
